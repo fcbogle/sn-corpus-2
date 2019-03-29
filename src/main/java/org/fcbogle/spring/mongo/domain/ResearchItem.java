@@ -15,38 +15,24 @@ public class ResearchItem {
 	private String mongo_id;
 	
 	private String id;
-	private String title;
-	
-	
-	private String paperAbstract;
-	
-	@DBRef
+	private String title;	
+	private String paperAbstract;	
 	private List<String> entities;
-	
 	private String s2Url;
-	private String s2PdfUrl;
-	
-	@DBRef
+	private String s2PdfUrl;	
 	private List<String> pdfUrls;
 	
 	@DBRef
-	private List<Author> authors;
+	private List<Author> authors;	
 	
-	@DBRef
-	private List<String> inCitations;
-	
-	@DBRef
-	private List<String> outCitations;
-	
+	private List<String> inCitations;	
+	private List<String> outCitations;	
 	private int year;
 	private String venue;
 	private String journalName;
 	private String journalVolume;
-	private String journalPages;
-	
-	@DBRef
-	private List<String> sources;
-	
+	private String journalPages;	
+	private List<String> sources;	
 	private String doi;
 	private String doiUrl;
 	private String pmid;

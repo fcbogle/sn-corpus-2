@@ -33,7 +33,8 @@ spring:
   profiles: MONGO
   
   data: 
-    mongodb: 
+    mongodb:
+      uri: mongodb://fcbogle:take2asp1r1n@localhost:27017
       host: localhost
       port: 27017 
       database: research-items

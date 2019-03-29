@@ -20,7 +20,6 @@ public class Author {
 	
 	private String name;
 	
-	@DBRef
 	private List<String> ids;
 	
 	public Author() {}

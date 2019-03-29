@@ -5,7 +5,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.fcbogle.spring.mongo.domain.Author;
 import org.fcbogle.spring.mongo.domain.ResearchItem;
+import org.fcbogle.spring.service.AuthorService;
 import org.fcbogle.spring.service.ResearchItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +32,9 @@ public class ResearchManagerImpl implements ResearchManager {
 	
 	@Autowired
 	private ResearchItemService researchItemService;
+	
+	@Autowired
+	private AuthorService authorService;
 
 	@Override
 	@Cacheable("allItems")
@@ -48,13 +53,18 @@ public class ResearchManagerImpl implements ResearchManager {
 			jp.nextToken();
 			while (jp.hasCurrentToken()) {
 				ResearchItem ri = jp.readValueAs(ResearchItem.class);
+				List<Author> authors = ri.getAuthors();
+				for (Author a : authors) {
+					Author b = this.authorService.create(a);
+					logger.info("Created Author: " + b);
+				}
 				allResearchItems.add(ri);
-				//try {
-				//	ResearchItem risaved = this.researchItemService.create(ri);
-				//	logger.info("JPA created: " + risaved.toString());
-				//} catch (Exception e) {
-				//	e.printStackTrace();
-				//}
+				try {
+					ResearchItem risaved = this.researchItemService.create(ri);
+					logger.info("Mongo insert achieved: " + risaved.toString());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				
 				jp.nextToken();
 				//logger.info("Research name: " + ri.getTitle());
