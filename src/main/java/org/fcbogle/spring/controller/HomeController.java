@@ -30,8 +30,8 @@ public class HomeController {
 	@GetMapping("/research")
 	public String showAllItems(Model model) {
 		logger.info("HomeController showAllItems() operation invoked");
-		//List<ResearchItem> allItems = this.researchManager.getAllResearchItems();
-		List<ResearchItem> allItems = this.researchManager.getAllMongoResearchItems();
+		List<ResearchItem> allItems = this.researchManager.getAllResearchItems();
+		//List<ResearchItem> allItems = this.researchManager.getAllMongoResearchItems();
 		model.addAttribute("allItems", allItems);
 		return "all-items";
 	}
