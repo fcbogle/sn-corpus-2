@@ -1,0 +1,44 @@
+spring.security.user.name: admin
+spring.security.user.password: admin
+
+
+spring:
+  profiles:
+    active:
+    - MONGO
+    
+  main:
+    allow-bean-definition-overriding: true
+    
+# logging:
+#  level:
+#    org.hibernate: DEBUG
+    
+---
+spring:
+  profiles: JPA
+   
+  datasource:
+    url: jdbc:mysql://localhost:3306/josie_dancing
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: take2asp1r1n
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+---
+ spring:
+  profiles: MONGO
+  
+  data: 
+    mongodb: 
+      host: localhost
+      port: 27017 
+      database: fcbogle
+      username: fcbogle
+      password: take2asp1r1n
+
+      
+  

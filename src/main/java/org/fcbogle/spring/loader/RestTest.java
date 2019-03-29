@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import org.fcbogle.spring.jpa.domain.ResearchItem;
+import org.fcbogle.spring.mongo.domain.ResearchItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

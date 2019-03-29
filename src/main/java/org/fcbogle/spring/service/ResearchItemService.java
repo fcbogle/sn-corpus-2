@@ -1,7 +1,7 @@
 package org.fcbogle.spring.service;
 
-import org.fcbogle.spring.jpa.domain.ResearchItem;
-import org.fcbogle.spring.jpa.repository.ResearchItemRepository;
+import org.fcbogle.spring.mongo.domain.ResearchItem;
+import org.fcbogle.spring.mongo.repository.ResearchItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

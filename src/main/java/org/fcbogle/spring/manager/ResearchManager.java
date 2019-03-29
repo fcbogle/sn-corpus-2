@@ -2,7 +2,7 @@ package org.fcbogle.spring.manager;
 
 import java.util.List;
 
-import org.fcbogle.spring.jpa.domain.ResearchItem;
+import org.fcbogle.spring.mongo.domain.ResearchItem;
 
 public interface ResearchManager {
 	

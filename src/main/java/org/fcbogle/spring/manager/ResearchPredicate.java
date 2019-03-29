@@ -3,7 +3,7 @@ package org.fcbogle.spring.manager;
 import java.util.List;
 import java.util.function.Predicate;
 
-import org.fcbogle.spring.jpa.domain.ResearchItem;
+import org.fcbogle.spring.mongo.domain.ResearchItem;
 
 public class ResearchPredicate {
 	

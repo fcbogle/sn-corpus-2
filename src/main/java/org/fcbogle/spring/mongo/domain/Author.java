@@ -3,7 +3,7 @@ package org.fcbogle.spring.mongo.domain;
 import java.util.List;
 
 
-import org.fcbogle.spring.jpa.domain.ResearchItem;
+import org.fcbogle.spring.mongo.domain.ResearchItem;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;

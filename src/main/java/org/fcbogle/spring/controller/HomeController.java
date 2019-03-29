@@ -2,7 +2,7 @@ package org.fcbogle.spring.controller;
 
 import java.util.List;
 
-import org.fcbogle.spring.jpa.domain.ResearchItem;
+import org.fcbogle.spring.mongo.domain.ResearchItem;
 import org.fcbogle.spring.manager.ResearchManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
