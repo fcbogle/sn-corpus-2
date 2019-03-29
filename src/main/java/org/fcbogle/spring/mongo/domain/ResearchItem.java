@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ResearchItem {	
 	
 	@Id
-	private String mongo_id;
+	private String mongoid;
 	
 	private String id;
 	private String title;	
@@ -37,14 +37,14 @@ public class ResearchItem {
 	private String doiUrl;
 	private String pmid;
 	
-	public ResearchItem() {}
+	public ResearchItem() {}	
 
-	public String getMongo_id() {
-		return mongo_id;
+	public String getMongoid() {
+		return mongoid;
 	}
 
-	public void setMongo_id(String mongo_id) {
-		this.mongo_id = mongo_id;
+	public void setMongoid(String mongoid) {
+		this.mongoid = mongoid;
 	}
 
 	public String getId() {

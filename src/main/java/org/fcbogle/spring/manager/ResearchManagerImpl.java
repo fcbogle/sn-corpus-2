@@ -78,6 +78,12 @@ public class ResearchManagerImpl implements ResearchManager {
 		return allResearchItems;
 	}
 	
+	public List<ResearchItem> getAllMongoResearchItems() {
+		logger.info("ResearchManagerImpl: getAllMongoResearchItems operation invoked");
+		List<ResearchItem> allItems = this.researchItemService.getAllItems();
+		return allItems;
+	}
+	
 	@Override
 	public ResearchItem getSingleItem(String id) {
 		List<ResearchItem> allItems = this.getAllResearchItems();
@@ -94,6 +100,12 @@ public class ResearchManagerImpl implements ResearchManager {
 		logger.info("ResearchManagerImpl findUniqueItem() success: " + id);
 		ResearchItem found = ResearchPredicate.filterResearchItems(this.getAllResearchItems(), ResearchPredicate.matchesId(id));
 		return found;
-	}	
+	}
+	
+	public ResearchItem findByUniqueMongoId(String id) {
+		logger.info("ResearchManagerImpl findByUniqueMongoId() success: " + id);
+		ResearchItem item = this.researchItemService.findOneByMongoid(id);
+		return item;
+	}
 
 }

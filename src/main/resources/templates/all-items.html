@@ -30,7 +30,7 @@
 
 		<ul th:each="item : ${allItems}">
 			<li class="list-group-item"><a th:text="${item.title}"
-				th:href="@{${'/research/' + item.id + '/show'}}"></a></li>
+				th:href="@{${'/research/' + item.mongoid + '/show'}}"></a></li>
 		</ul>
 
 		<div th:replace="layout/footer.html"></div>

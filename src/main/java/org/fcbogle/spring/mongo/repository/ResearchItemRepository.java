@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Profile("MONGO")
 @Repository
 public interface ResearchItemRepository extends MongoRepository<ResearchItem, String> {
-	
+	ResearchItem findByMongoid(String mongoid);
 }
