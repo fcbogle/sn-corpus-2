@@ -11,6 +11,10 @@ public class ResearchPredicate {
 		return p -> p.getId().equals(id);
 	}
 	
+	public static Predicate<ResearchItem> containsPattern(String abs) {
+		return p -> p.getPaperAbstract().contains(abs);
+	}
+	
 	public static ResearchItem filterResearchItems(List<ResearchItem> researchItems, Predicate<ResearchItem> predicate) {
 		return researchItems.stream()
 				.filter(predicate)

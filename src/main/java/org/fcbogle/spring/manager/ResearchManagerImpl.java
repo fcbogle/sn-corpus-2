@@ -64,11 +64,8 @@ public class ResearchManagerImpl implements ResearchManager {
 					logger.info("Mongo insert achieved: " + risaved.toString());
 				} catch (Exception e) {
 					e.printStackTrace();
-				}
-				
+				}				
 				jp.nextToken();
-				//logger.info("Research name: " + ri.getTitle());
-				//logger.info("Research Item count: " + allResearchItems.size());
 			}			
 			
 		} catch (Exception e) {
