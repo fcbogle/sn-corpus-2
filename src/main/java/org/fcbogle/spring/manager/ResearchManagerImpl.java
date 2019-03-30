@@ -99,6 +99,18 @@ public class ResearchManagerImpl implements ResearchManager {
 		return found;
 	}
 	
+	public List<ResearchItem> findInAuthorsList(String words) {
+		logger.info("ResearchManagerImpl findInAuthorsList() success: " + words);
+		List<ResearchItem> found = ResearchPredicate.wordsContainedInAuthors(this.getAllResearchItems(), ResearchPredicate.containsPattern(words));
+		return found;		
+	}
+	
+	public List<ResearchItem> findInPaperAbstract(String words) {
+		logger.info("ResearchManagerImpl findInPaperAbstract() success: " + words);
+		List<ResearchItem> found = ResearchPredicate.wordsContainedInAbstract(this.getAllResearchItems(), ResearchPredicate.containsPattern(words));
+		return found;		
+	}
+	
 	public ResearchItem findByUniqueMongoId(String id) {
 		logger.info("ResearchManagerImpl findByUniqueMongoId() success: " + id);
 		ResearchItem item = this.researchItemService.findOneByMongoid(id);
