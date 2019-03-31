@@ -18,11 +18,16 @@
 		<section id="intro-header">
 			<div class="container">
 				<ul class="nav navbar-nav" style="float: right">
+					<li><a th:href="@{/}" class="navbar-nav pull-right">Home</a></li>
 					<li><a th:href="@{/research}" class="navbar-nav pull-right">Back
 							to all research</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#authorModal">Search
+							Author</a></li>
+					<li><a href="#" data-toggle="modal"
+						data-target="#abstractModal">Search Abstract</a></li>
 				</ul>
 				<div class="wrap-headline">
-					<h3 class="text-center">Smith & Nephew Open Research Corpus</h3>
+					<h3 class="text-left">Smith & Nephew Open Research Corpus</h3>
 					<hr>
 
 				</div>
@@ -33,11 +38,19 @@
 			<section id="single-item">
 				<div class="container">
 
-					<div class="container-content-title">
-						<h4>
-							<em>Research Item: </em><strong><span
-								th:text="${single.title}"></span></strong>
-						</h4>
+					<div class="container-content-title row">
+						<div class="col-md-2">
+							<h4>
+								<em>Research Item: </em>
+							</h4>
+						</div>
+
+						<div class="col-md-10">
+							<h4>
+								<strong><span th:text="${single.title}"></span></strong>
+							</h4>
+						</div>
+
 					</div>
 
 					<table class="table table-striped">
@@ -48,7 +61,9 @@
 						</tr>
 						<tr>
 							<td><small><span th:text="${single.id}"></span></small></td>
-							<td><article><span th:text="${single.paperAbstract}"></span></article></td>
+							<td><article>
+									<span th:text="${single.paperAbstract}"></span>
+								</article></td>
 						</tr>
 
 					</table>
@@ -181,15 +196,17 @@
 							<td style="word-wrap: break-word">
 								<ul th:each="citation : ${single.inCitations}"
 									style="list-style-type: none; list-style-position: inside; margin: 0; padding: 0;">
-									<li><small><span th:text="${citation}"
-											th:target="_blank"></span></small></li>
+									<li><small><a th:text="${citation}"
+											th:target="_blank"
+											th:href="@{${'/research/' + citation + '/show'}}"></a></small></li>
 								</ul>
 							</td>
 							<td style="word-wrap: break-word">
 								<ul th:each="citation : ${single.outCitations}"
 									style="list-style-type: none; list-style-position: inside; margin: 0; padding: 0;">
-									<li><small><span th:text="${citation}"
-											th:target="_blank"></span></small></li>
+									<li><small><a th:text="${citation}"
+											th:target="_blank"
+											th:href="@{${'/research/' + citation + '/show'}}"></a></small></li>
 								</ul>
 							</td>
 						</tr>
@@ -228,6 +245,8 @@
 				</div>
 			</section>
 		</div>
+
+		<div th:replace="layout/modal.html"></div>
 
 		<div th:replace="layout/footer.html"></div>
 	</div>

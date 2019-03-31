@@ -1,0 +1,81 @@
+<!-- Modal -->
+		<div class="modal fade" id="authorModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span> <span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Filter items based on Author/s:</h4>
+					</div>
+
+					<!-- Modal Body -->
+					<div class="modal-body">
+
+						<form class="form-horizontal" role="form" method="post" name="f"
+							th:object="${searchAuthor}" th:action="@{/research/search/author}">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="search">Filter Data:</label>
+								<div class="col-sm-9">
+									<!--  <label for="authorSearch">Search</label> -->
+									<input type="text" class="form-control" id="authorSearch"
+										th:field="*{authorSearch}" placeholder="Enter author search name..." />
+								</div>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-default">Search</button>
+							</div>
+
+						</form>
+
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="abstractModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span> <span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Filter items based on Abstract:</h4>
+					</div>
+
+					<!-- Modal Body -->
+					<div class="modal-body">
+
+						<form class="form-horizontal" role="form" method="post" name="f"
+							th:object="${searchAbstract}" th:action="@{/research/search/abstract}">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="search">Filter Data:</label>
+								<div class="col-sm-9">
+									<!--  <label for="authorSearch">Search</label> -->
+									<input type="text" class="form-control" id="abstractSearch"
+										th:field="*{abstractSearch}" placeholder="Enter abstract search phrase..." />
+								</div>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-default">Search</button>
+							</div>
+
+						</form>
+
+					</div>
+					
+				</div>
+			</div>
+		</div>

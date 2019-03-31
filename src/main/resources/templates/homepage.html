@@ -9,6 +9,24 @@
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+<style type="text/css">
+	.jumbotron {
+		margin-top: 20px;
+		background-image: url("https://www.semanticscholar.org/img/semantic_scholar_og.jpg");
+		background-size: cover;
+	}
+	.jumbotron h1 {
+		color: #fff;
+	}
+	.jumbotron p {
+		color: #fff;
+	}
+	
+	.jumbotron a {
+		color: #fff;
+	}
+	
+</style>
 </head>
 <body>
 
@@ -17,21 +35,36 @@
 
 		<section id="intro-header">
 			<div class="container">
-				<ul class="nav navbar-nav" style="float: right">
-					<li><a th:href="@{/research}" class="navbar-nav pull-right">Research
+				<ul class="nav navbar-nav pull-right" style="float: right">
+					<li><a th:href="@{/research}" class="navbar-nav">Research
 							Items</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#authorModal">Search
+							Author</a></li>
+					<li><a href="#" data-toggle="modal"
+						data-target="#abstractModal">Search Abstract</a></li>
 				</ul>
 				<div class="wrap-headline">
-					<h3 class="text-center">Smith & Nephew Open Research Corpus</h3>
+					<h3 class="text-left">Smith & Nephew Open Research Corpus</h3>
 					<hr>
 
 				</div>
 
 			</div>
 		</section>
+		<section>
+			<div class="jumbotron">
+				<h1 class="display-4">Semantic Scholar Corpus</h1>
+				<p class="lead">JSON Dataset from Semantic Scholar Corpus</p>
+				<hr class="my-4">
+				<p>Citation: <em>Waleed Ammar et al. 2018. Construction of the Literature Graph in Semantic Scholar. NAACL.</p>
+				<p><em><a href="https://www.semanticscholar.org/paper/09e3cf5704bcb16e6657f6ceed70e93373a54618" th:target="_blank">Link to mandatory citation</a></em></p>
+			</div>
+		</section>
+
+
+		<div th:replace="layout/modal.html"></div>
 
 		<div th:replace="layout/footer.html"></div>
 	</div>
-
 </body>
 </html>

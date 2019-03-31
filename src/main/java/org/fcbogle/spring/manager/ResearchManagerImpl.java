@@ -53,18 +53,18 @@ public class ResearchManagerImpl implements ResearchManager {
 			jp.nextToken();
 			while (jp.hasCurrentToken()) {
 				ResearchItem ri = jp.readValueAs(ResearchItem.class);
-				List<Author> authors = ri.getAuthors();
-				for (Author a : authors) {
-					Author b = this.authorService.create(a);
-					logger.info("Created Author: " + b);
-				}
+				//List<Author> authors = ri.getAuthors();
+				//for (Author a : authors) {
+				//	Author b = this.authorService.create(a);
+				//	logger.info("Created Author: " + b);
+				//}
 				allResearchItems.add(ri);
-				try {
-					ResearchItem risaved = this.researchItemService.create(ri);
-					logger.info("Mongo insert achieved: " + risaved.toString());
-				} catch (Exception e) {
-					e.printStackTrace();
-				}				
+				//try {
+				//	ResearchItem risaved = this.researchItemService.create(ri);
+				//	logger.info("Mongo insert achieved: " + risaved.toString());
+				//} catch (Exception e) {
+				//	e.printStackTrace();
+				//}				
 				jp.nextToken();
 			}			
 			

@@ -21,6 +21,10 @@ public class ResearchPredicate {
 				.anyMatch(a -> a.getName().contains(author));
 	}
 	
+	public static Predicate<ResearchItem> containsAbstractString(String abstractTerm) {
+		return p -> p.getPaperAbstract().contains(abstractTerm);
+	}
+	
 	public static ResearchItem filterResearchItems(List<ResearchItem> researchItems, Predicate<ResearchItem> predicate) {
 		return researchItems.stream()
 				.filter(predicate)

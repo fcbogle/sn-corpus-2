@@ -18,10 +18,8 @@
 			<div class="container">
 				<ul class="nav navbar-nav" style="float: right">
 					<li><a th:href="@{/}" class="navbar-nav pull-right">Home</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#authorModal">Search 
-					Author</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#abstractModal">Search 
-					Abstract</a></li>
+					<li><a th:href="@{/research}" class="navbar-nav">Research
+							Items</a></li>
 				</ul>
 				<div class="wrap-headline">
 					<h3 class="text-left">Smith & Nephew Open Research Corpus</h3>
@@ -30,12 +28,9 @@
 				</div>
 
 			</div>
-			
-			<div th:replace="layout/modal.html"></div>
-			
 		</section>
 
-		<ul th:each="item : ${allItems}">
+		<ul th:each="item : ${foundItems}">
 			<li class="list-group-item"><a th:text="${item.title}"
 				th:href="@{${'/research/' + item.id + '/show'}}"></a></li>
 		</ul>
