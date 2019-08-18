@@ -79,8 +79,7 @@ public class HomeController {
 
 	@PostMapping("/research/search/abstract")
 	public String searchForAbstractString(@ModelAttribute SearchAbstract searchAbstract, Model model) {
-		logger.info(
-				"HomeController searchForAbstractString() operation invoked: " + searchAbstract.getAbstractSearch());
+		logger.info("HomeController searchForAbstractString() operation invoked: " + searchAbstract.getAbstractSearch());
 		List<ResearchItem> allItems = this.researchManager.getAllResearchItems();
 		List<ResearchItem> foundItems = ResearchPredicate.wordsContainedInAbstract(allItems,
 				ResearchPredicate.containsAbstractString(searchAbstract.getAbstractSearch()));
